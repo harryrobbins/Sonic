@@ -8,9 +8,9 @@ apt update
 apt install ffmpeg nano -y
 
 pip install uv
-uv pip install --system  opencv-python accelerate
+uv pip install --system  opencv-python accelerate hf_transfer
 uv pip install --system  -r requirements.txt
-uv pip install --system  hf_transfer
+uv pip install --system
 
 
 
