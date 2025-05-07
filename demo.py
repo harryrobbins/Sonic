@@ -1,10 +1,7 @@
-import os
 import argparse
+import os
 import time
 from pathlib import Path
-from sonic import Sonic
-
-pipe = Sonic(0)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('image_path')
@@ -26,6 +23,13 @@ if not image_path.exists():
 
 if not audio_path.exists():
     raise FileNotFoundError(f"Input audio file not found: {audio_path}")
+
+print("Input and output files both exist")
+
+#import this after checking the files exist
+from sonic import Sonic
+
+pipe = Sonic(0)
 
 # Check if output file exists, modify with timestamp if it does
 if output_path.exists():
